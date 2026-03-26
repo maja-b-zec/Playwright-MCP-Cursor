@@ -65,6 +65,16 @@ test.describe('Single Room page (booking)', () => {
     await expect(page.getByRole('heading', { name: 'Welcome to Shady Meadows B&B', level: 1 })).toBeVisible();
   });
 
+  test('Logo link navigates back to home page', async ({
+    singleRoomPage,
+    page,
+  }) => {
+    await expect(singleRoomPage.logoLink).toBeVisible();
+    await singleRoomPage.logoLink.click();
+    await expect(page).toHaveURL(/\/$|\/\?/);
+    await expect(page.getByRole('heading', { name: 'Welcome to Shady Meadows B&B', level: 1 })).toBeVisible();
+  });
+
   test('Scenario 27: Cancel button keeps user on room page without submitting', async ({
     singleRoomPage,
     page,

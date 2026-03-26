@@ -24,6 +24,10 @@ export class RoomPage extends BasePage {
     await this.goto(this.reservationPath);
   }
 
+  get logoLink(): Locator {
+    return this.page.getByRole('link', { name: 'Shady Meadows B&B' });
+  }
+
   /** Main room heading (e.g. "Single Room", "Double", "Suite") */
   get roomHeading(): Locator {
     return this.page.getByRole('heading', { level: 1 }).first();
