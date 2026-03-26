@@ -6,7 +6,7 @@ dist/
 *.tsbuildinfo
 
 # Environment and secrets (never commit real credentials)
-env.json
+# env.json is committed because it only contains public demo site credentials
 .env
 .env.*
 !.env.example
