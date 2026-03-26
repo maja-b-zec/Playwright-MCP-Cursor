@@ -1,0 +1,33 @@
+{
+  "name": "automationintesting-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright TypeScript tests for automationintesting.online, scenarios discovered via Playwright MCP Server",
+  "scripts": {
+    "test": "playwright test --reporter=list --reporter=html --reporter=allure-playwright",
+    "test:headed": "playwright test --headed --reporter=list --reporter=html --reporter=allure-playwright",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:shard:1": "playwright test --shard=1/3 --reporter=list --reporter=blob --reporter=allure-playwright",
+    "test:shard:2": "playwright test --shard=2/3 --reporter=list --reporter=blob --reporter=allure-playwright",
+    "test:shard:3": "playwright test --shard=3/3 --reporter=list --reporter=blob --reporter=allure-playwright",
+    "test:shard:all": "npm run test:shard:1 & npm run test:shard:2 & npm run test:shard:3",
+    "test:shard:merge": "playwright merge-reports ./blob-report --reporter=html --reporter=allure-playwright",
+    "allure:generate": "allure generate allure-results -o allure-report --clean",
+    "allure:serve": "allure serve allure-results"
+  },
+  "keywords": [
+    "playwright",
+    "e2e",
+    "typescript",
+    "mcp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "allure-commandline": "^2.37.0",
+    "allure-playwright": "^3.6.0",
+    "typescript": "^5.7.0"
+  }
+}

@@ -1,0 +1,11 @@
+---
+description: Show Allure report after running tests
+globs: tests/**/*.spec.ts
+alwaysApply: false
+---
+
+# Running Tests – Allure Report
+
+When the user asks to run tests, after the test run also open the Allure report by default (`npm run allure:serve` or `npx allure serve allure-results`).
+
+Skip opening the report only when the user explicitly says they don't want it (e.g. "run tests without report", "just run tests, no report").

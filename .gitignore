@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Build and tooling
+dist/
+*.tsbuildinfo
+
+# Environment and secrets (never commit real credentials)
+env.json
+.env
+.env.*
+!.env.example
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# Allure
+/allure-results/
+/allure-report/
+
+# OS and IDE
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Debug and temp
+*.local
+.cache/
